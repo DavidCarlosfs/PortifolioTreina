@@ -1,4 +1,3 @@
-package EstruturaCondicional;
 /*Questão 1: Maior de Dois Números
  * Faça um programa que peça dois números do usuário e imprima o maior deles.
  */
