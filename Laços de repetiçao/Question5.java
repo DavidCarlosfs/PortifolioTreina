@@ -8,6 +8,9 @@ public class Question5 {
         double taxa_crescimenteB;
         double pais_b = 0;
         char resposta = ' ';
+        int ano_a_mais = 0;
+        double crescimento_a = 0;
+        double crescimento_b = 0;
 
         Scanner input = new Scanner(System.in);
         do {
@@ -34,7 +37,7 @@ public class Question5 {
                         }
 
                     } while (pais_a < 0);
-                    double crescimento_a = pais_a * taxa_crescimenteA;
+                    crescimento_a = pais_a * taxa_crescimenteA;
 
                     do {
                     System.out.println("Digite a taxa de crescimento do 2º país:");
@@ -59,13 +62,36 @@ public class Question5 {
                     }
                     }
                     while (pais_b < 0);
-                    double crescimento_b = pais_b * taxa_crescimenteB;            
+                    crescimento_b = pais_b * taxa_crescimenteB;            
 
                 if (pais_a == pais_b && taxa_crescimenteA == taxa_crescimenteB) {
                     System.out.println("As taxas e a população dos dois países são iguais, portanto o crecimento será paralelo.");
                     System.out.println("Por favor, repita o processo.");
                 }
-        } while (pais_a == pais_b && taxa_crescimenteA == taxa_crescimenteB);                
+        } while (pais_a == pais_b && taxa_crescimenteA == taxa_crescimenteB);
+        ano_a_mais += 1;
+        pais_a += crescimento_a;
+        pais_b += crescimento_b;
+        if (pais_a <= pais_b) {
+            do {
+                ano_a_mais += 1;
+                pais_a += crescimento_a;
+                pais_b += crescimento_b;
+            }
+            while (pais_a <= pais_b);
+            System.out.println("O país A precisará de " + ano_a_mais + " anos para superar a população de país B.");
+        }
+        else {
+            do {
+                ano_a_mais += 1;
+                pais_a += crescimento_a;
+                pais_b += crescimento_b;                 
+            }
+            while (pais_a > pais_b);
+           System.out.println("O país B precisará de " + ano_a_mais + " anos para superar a população de país A.");
+        }
+
+
             } else if (resposta == 'n') {
                 System.out.println("Obrigado por usar o nosso programa.");
                 break;
