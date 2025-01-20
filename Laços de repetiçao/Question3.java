@@ -21,7 +21,7 @@ public class Question3 {
             System.out.println("Quantidade de caracteres inválidas, por favor digite novamente:");
         }
     }
-    while (nome.length() > 3);
+    while (nome.length() <= 3);
     System.out.println("Olá, " + nome);
 
     do {
@@ -31,7 +31,7 @@ public class Question3 {
             System.out.println("Idade inválida, por favor digite uma idade entre 0 e 150:");
         }
     }
-    while (idade >= 0 && idade <= 150);
+    while (idade < 0 || idade > 150);
     System.out.println("Olá, " + nome + ", você tem " + idade + " anos.");
 
     do {
@@ -41,17 +41,17 @@ public class Question3 {
             System.out.println("Salário inválido, por favor digite um salário maior que 0:");
         }
     }
-    while (salario >= 0);
+    while (salario < 0);
     System.out.println("Olá, " + nome + ", você tem " + idade + " anos e ganha R$" + salario);
 
     do {
         System.out.println("Informe o seu sexo (m - Masculino; f - Feminino):");
         sexo = input.next().toLowerCase().charAt(0);
-        if (sexo != 'f' || sexo != 'm') {
+        if (sexo != 'f' && sexo != 'm') {
             System.out.println("Valor incorreto. Por favor digite f para Feminino ou m para Maculino:");
         }
     }
-    while ( sexo == 'f' || sexo == 'm');
+    while ( sexo != 'f' && sexo != 'm');
     if (sexo == 'f') {
         System.out.println("Olá, " + nome + ", você tem " + idade + " anos, ganha R$" + salario + " e é do sexo feminino");
     }
@@ -61,11 +61,11 @@ public class Question3 {
     do {
         System.out.println("Por fim informe o seu estado civil (s - Solteiro; c - Casado; v - Viúvo; s - Separado):");
         estado_civil = input.next().toLowerCase().charAt(0);
-        if (estado_civil != 's' || estado_civil != 'c' || estado_civil != 'v' || estado_civil != 'd') {
+        if (estado_civil != 's' && estado_civil != 'c' && estado_civil != 'v' && estado_civil != 'd') {
             System.out.println("Valor incorreto! Por favor informe s se Solteiro, c se Casado, v de Viúvo ou s de Separado:");
         }
     }
-    while (estado_civil == 's' || estado_civil == 'c' || estado_civil == 'v' || estado_civil == 'd');
+    while (estado_civil != 's' && estado_civil != 'c' && estado_civil != 'v' && estado_civil != 'd');
     if (estado_civil == 's') {
         System.out.println("Olá, " + nome + ", você tem " + idade + " anos, ganha R$" + salario + ", é do sexo masculino e é solteiro/a");
     } else if (estado_civil == 'c') {
