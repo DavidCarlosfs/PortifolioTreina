@@ -20,12 +20,12 @@
     bottom: 0;
     width: 80px;
     right: -80px;
-    animation: pipe-animation 1.5s infinite linear;
+    animation: pipe-animation 2s infinite linear;
 }
 
 .mario {
-    width: 150px;
-    position: relative;
+    width: 100px;
+    position: absolute;
     bottom: 0;
 
 }
@@ -36,7 +36,7 @@
 
 .clouds {
     position: absolute;
-    width: 550px;
+    width: 500px;
     animation: clouds-animation 20s infinite linear;
 }
 
