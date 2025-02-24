@@ -1,20 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/script.js" defer></script>
+    <link rel="shortcut icon" href="./images/mario-favicon.png" type="image/x-icon">
+   <!-- <script src="./js/script.js" defer></script> -->
 
     <title>Mario Jump</title>
 </head>
 
 <body>
-    <div class="game-board">
-        <img src="./images/clouds.png" class="clouds">
-        <img src="./images/mario.gif" class="mario">
-        <img src="./images/pipe.png" class="pipe">
-    </div>
+    <main class="game-board">
+        <img class="clouds" src="./images/clouds.png">
+        <img class="clouds2" src="./images/clouds.png" > 
+        <img class="clouds3" src="./images/clouds.png" > 
+        <img class="mario" src="./images/mario.gif" >
+        <img class="estrela" src="./images/estrela.png" >
+        <img class="pipe" src="./images/pipe.png" >
+        <img class="big-bullet" src="./images/big-bullet-mario.png" >
+ 
+    </main>
+    <section class="modal">
+        <section class="modal-login ativar">
+            <h1 class="titulo"><span class="azul">Pronto</span><span class="amarelo">para</span><span class="vermelho">jogar</span><span class="verde">?</span></h1>
+            <input type="text" class="input-jogador" id="inputJogador" placeholder="Jogador..." onfocus="true">
+            <button class="btn-modal btn-start btn-red-tr" id="btnStart">Iniciar Jogo"</button>
+        <p class="regras"> Use a tecla "<span class="azul">Arrow up</span>" para pular, "<span class="amarelo">Arrow down</span>" para abaixar e "<span class="verde">Space</span>" para dar o super pulo!</p>
+
+        <img src="./images/mario-login.png" class="mario-login">
+        </section>
+        
+        <section class="modal-gameover"></section>
+    </section>
 </body>
 </html>

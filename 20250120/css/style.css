@@ -2,47 +2,171 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
 
+.azul {
+    color: rgb(4, 0, 255);
+}
+
+.vermelho {
+    color: rgb(255, 0, 0);
+}
+
+.amarelo {
+    color: rgb(255, 255, 0);
+}
+
+.verde {
+    color: rgb(0, 255, 0);
 }
 
 .game-board {
     width: 100%;
-    height: 390px;
+    height: 100vh;
     border-bottom: 15px solid rgb(35, 160, 35);
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(#87CEEB, #E0F6FF)
-}
-
-.pipe {
-    position: absolute;
-    bottom: 0;
-    width: 80px;
-    right: -80px;
-    animation: pipe-animation 1.5s infinite linear;
-}
-
-.mario {
-    width: 100px;
-    position: absolute;
-    bottom: 0;
+    background: linear-gradient(#0893f0, #E0F6FF);
 
 }
 
-.jump {
+.game-board.start .pipe {
+    animation: pipe-animation 2s infinite linear;
+}
+
+.game-board.start .big-bullet {
+    animation: big-bullet-animation 3s infinite linear;
+}
+
+.game-board.start .jump {
     animation: jump 500ms ease-in-out;
 }
 
-.clouds {
+.game-board.start .super-jump {
+    animation: super-jump 500ms ease-in-out;
+}
+
+.game-board.start .estrela {
+    animation: estrela-animation 5s infinite linear 1.5s;
+}
+
+.game-board.start .clouds {
+    animation: clouds-animation 10s infinite linear 1s;
+}
+
+.game-board.start .clouds2 {
+    animation: clouds-animation 10s infinite linear 5s;
+}
+
+.game-board.start .clouds3 {
+    animation: clouds-animation 10s infinite linear 2s;
+}
+
+.game-board .pipe {
     position: absolute;
-    width: 500px;
-    animation: clouds-animation 20s infinite linear;
+    bottom: 0;
+    width: 80px;
+    right: 0px;
+}
+
+.game-board .mario {
+    width: 100px;
+    position: absolute;
+    bottom: 0;
+}
+
+.game-board .big-bullet {
+    position: absolute;
+    bottom: 70px;
+    width: 150px;
+    right: -150px;
+}
+
+.game-board .estrela {
+    position: absolute;
+    width: 50px;
+    bottom: 360px;
+    right: -50px;
+}
+
+.game-board .clouds {
+    position: absolute;
+    width: 300px;
+    top: absolute;
+    right: -300px;
+}
+
+.game-board .clouds2 {
+    position: absolute;
+    width: 300px;
+    top: 140px;
+    right: -300px;
+}
+
+.game-board .clouds3 {
+    position: absolute;
+    width: 300px;
+    top: 280px;
+    right: -300px;
+}
+
+.modal {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 70%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.modal .modal-login {
+    width: 600px;
+    height: 300px;
+    background-image: url('../images/fundo-login.jpg');
+    background-position: top center;
+    background-size: cover;
+    box-shadow: 2px, 2px, 20px rgb(255, 255, 0);
+    padding: 50px;
+    border-radius: 30px;
+    display: none;
+
+}
+
+.moldal.ativar .modal-login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+@keyframes big-bullet-animation {
+    from {
+        right: -150px;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes estrela-animation {
+    from {
+        right: -50px;
+    }
+
+    to {
+        right: 100%;
+    }
 }
 
 @keyframes pipe-animation {
     from {
-        right: 0;
+        right: 0px;
     }
 
     to {
@@ -54,7 +178,9 @@
     0% {
         bottom: 0;
     }
-
+    30% {
+        bottom: 180px;
+    }
     40% {
         bottom: 180px;
     }
@@ -64,14 +190,52 @@
     60% {
         bottom: 180px;
     }
+    70% {
+        bottom: 180px;
+    }
+    80% {
+        bottom: 180px;
+    }
     100% {
         bottom: 0;
     }
 }
 
+@keyframes super-jump {
+    0% {
+        bottom: 0;
+        left: 0;
+    }
+    15% {
+        bottom: 20%;
+        left: 50px;
+    }
+    30% {
+        bottom: 60%;
+        left: 150px;
+    }
+    50% {
+        bottom: 60%;
+        left: 250px;
+    }
+
+    70% {
+        bottom: 60%;
+        left: 250px;
+    }
+    80% {
+        bottom: 20%;
+        left: 50px;
+    }
+    100% {
+        bottom: 0;
+        left: 0;
+    }
+}
+
 @keyframes clouds-animation {
     from {
-        right: -550px;
+        right: -300px;
     }
 
     to {
